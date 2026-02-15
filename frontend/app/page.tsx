@@ -74,9 +74,9 @@ export default function Home() {
       await loadFiles();
     } catch (deleteError) {
       setError(
-        deleteError instanceof Error
-          ? deleteError.message
-          : "Failed to delete file.",
+        deleteError instanceof Error ?
+          deleteError.message
+        : "Failed to delete file.",
       );
     } finally {
       setDeletingId(null);
