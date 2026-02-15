@@ -73,7 +73,6 @@ class DBClient(metaclass=SingletonMeta):
     def update_row(self, table_name: str, data: dict, where_condition_dict: dict) -> dict | None:
         query = self.supabase.table(table_name).update(data)
         query = self._apply_conditions(query, where_condition_dict)
-
         response = query.execute()
         return response.data[0] if response.data else None
 
@@ -90,11 +89,9 @@ class DBClient(metaclass=SingletonMeta):
     def _apply_conditions(query, where_condition_dict: dict | None):
         if not where_condition_dict:
             return query
-
         for column, (operator, value) in where_condition_dict.items():
             if operator == SupabaseOperatorType.IS_NOT_NULL.value:
                 query = query.not_.is_(column, None)
             else:
                 query = getattr(query, operator)(column, value)
-
         return query

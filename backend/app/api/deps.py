@@ -5,7 +5,8 @@ All dependencies used in route handlers are defined here so that they
 can be overridden in tests via `app.dependency_overrides`.
 
 The dependency graph:
-    validate_token -> (auth — populates request.state)
+    get_jwks_client -> SupabaseJWKSClient singleton (PyJWKClient)
+    validate_token -> get_jwks_client, (auth — populates request.state)
     get_db_client -> DBClient singleton
     get_storage_client -> StorageClient singleton
     get_file_repository -> FileRepository(db_client)
