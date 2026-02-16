@@ -13,7 +13,6 @@ or:
 from __future__ import annotations
 
 import os
-import uvicorn
 from fastapi import FastAPI
 from app.api.routes.files import router as files_router
 from app.lifespan import lifespan
@@ -32,6 +31,7 @@ app.include_router(files_router)
 logger.info("Server initialised successfully.")
 
 if __name__ == "__main__":
+    import uvicorn
     port = int(os.environ.get("PORT", "8080"))
     logger.info("Starting the FastAPI server at port %d", port)
     uvicorn.run(app, host="0.0.0.0", port=port)
