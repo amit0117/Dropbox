@@ -18,7 +18,6 @@ class AppConfig(metaclass=SingletonMeta):
     def __init__(self) -> None:
         self.supabase_url: str = self._require("SUPABASE_URL")
         self.supabase_key: str = self._require("SUPABASE_KEY")
-        self.supabase_jwt_secret: str = self._require("SUPABASE_JWT_SECRET")
         self.supabase_storage_bucket: str = self._require("SUPABASE_STORAGE_BUCKET")
         self.environment: str = os.environ.get("ENVIRONMENT", "development")
         self.port: int = int(os.environ.get("PORT", "8080"))
