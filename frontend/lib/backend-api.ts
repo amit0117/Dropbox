@@ -8,7 +8,7 @@ import type {
   UploadUrlResponse,
 } from "@/types/files";
 
-const DEFAULT_REQUEST_MS = 30_000;
+const DEFAULT_REQUEST_MS =5* 60* 1000;
 
 const getBackendBaseUrl = () => {
   const value = process.env.NEXT_PUBLIC_API_URL;
