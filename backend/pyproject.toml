@@ -1,8 +1,0 @@
-[project]
-name = "dropbox-backend"
-version = "1.0.0"
-requires-python = ">=3.10"
-
-# Tell Vercel where the FastAPI app lives (see https://vercel.com/docs/frameworks/backend/fastapi)
-[project.scripts]
-app = "app.main:app"
