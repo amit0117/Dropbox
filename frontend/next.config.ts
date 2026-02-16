@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Redirect trailing-slash URLs to no-slash so Origin header matches backend CORS allowlist
+  trailingSlash: false,
 };
 
 export default nextConfig;
