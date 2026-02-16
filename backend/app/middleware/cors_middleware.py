@@ -1,7 +1,8 @@
 from __future__ import annotations
 import os
 from starlette.middleware.cors import CORSMiddleware
-from app.constants.constants import ALLOWED_ORIGINS
+
+ALLOWED_ORIGINS: list[str] = ["http://localhost:3000", "http://127.0.0.1:3000", "https://dropbox-seven-steel.vercel.app"]
 
 
 class CustomCORSMiddleware(CORSMiddleware):
