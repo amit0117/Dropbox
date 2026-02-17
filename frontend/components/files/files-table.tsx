@@ -43,7 +43,6 @@ export function FilesTable({
           files.map((file) => (
             <Table.Tr
               key={file.id}
-              onClick={() => onDownload(file)}
               style={{ cursor: "pointer" }}
             >
               <Table.Td>{file.name}</Table.Td>
